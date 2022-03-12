@@ -63,7 +63,7 @@ void BraceHelper::reduceCountOfOpenBrace()
     --m_countOfOpenBrace;
     if (m_countOfOpenBrace < 0)
     {
-        auto msg = "error: m_countOfLeftBrace is " + m_countOfOpenBrace;
+        auto msg = "error: m_countOfLeftBrace is " + to_string(m_countOfOpenBrace);
         std::cout << msg << std::endl;
         throw msg;
     }
