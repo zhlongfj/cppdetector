@@ -48,8 +48,8 @@ cppdetector通过正则和字符串匹配检测代码。在检测时，不需要
 
 ## :gem: 编译
 cppdetector采用cmake进行工程配置
-### Windows
-#### cmake command
+###Windows
+####cmake command
 ```
 //cd到cppdetector目录
 mkdir build 
@@ -58,33 +58,35 @@ cmake ..
 cmake --build . --config RelWithDebInfo
 //you can Open the cppdetector.sln to compile in the Build directory  
 ```
-#### IDE打开cmake项目
+####IDE打开cmake项目
 
 * clion打开cppdetector根目录
 * Visual Studio->“打开本地文件夹”，选中cppdetector根目录
 
-### Mac
-#### cmake command
+###Mac
+####cmake command
 ```
 //cd到cppdetector目录
 mkdir build
 cd build
 cmake ..
 cmake --build . --config RelWithDebInfo
-//you can compile with `make` on Linux and Mac
-//make
+#you can build with multi-core, eg: 6 core
+#cmake --build . --config RelWithDebInfo -j6
+#you can compile with `make` on Linux and Mac
+#make
 ```
 ####IDE打开cmake项目
 
 * clion打开cppdetector根目录
 
 ## :gem: 运行
-### Windows
+###Windows
 `cppdetector multithread "codepath"`
-### Mac
+###Mac
 `./cppdetector multithread /Users/hualongzhang/work/cppdetector/detector_core`
 
-## 参数
+##参数
 Parameter  | Description
 ------------- | -------------
 Param1  | singlethread, multithread or multiprocess 
@@ -93,14 +95,14 @@ Param3 | 例外配置文件路径
 Param4 | 规则名配置文件路径
 Param5 | 结果存放路径
 
-### 例外配置文件格式
+###例外配置文件格式
 ```
 [
     "/Users/hualongzhang/work/cppdetector/detector_core/3rdparty",
     "/Users/hualongzhang/work/cppdetector/detector_core/common/codeconversion.h"
 ]
 ```
-### 规则名配置文件格式
+###规则名配置文件格式
 可由代码生成：`DetectorCommon().setDetectorRuleNames((resultDir / "detectorRuleNames.json").string()`
 
 数组规则名如下：
@@ -119,7 +121,7 @@ Param5 | 结果存放路径
 }
 ```
 
-### 可能的方式
+###可能的方式
 ```
 ./cppdetector multithread "/Users/hualongzhang/work/cppdetector/detector_core"
 ./cppdetector multithread "/Users/hualongzhang/work/cppdetector/detector_core" "/Users/hualongzhang/work/cppdetector" 
@@ -141,6 +143,4 @@ email: zhlongfj@sina.com
 
 [License MIT](LICENSE)
 
-[谷歌c++风格](https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide)
-
-[](https://shields.io/category/social)
+[badags](https://shields.io/category/social)
