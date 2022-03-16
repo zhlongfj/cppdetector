@@ -8,7 +8,7 @@ void ConfusedRuleStatementOutsideOfCaseDemo(int b)
     int c = 0;
     switch (b)
     {
-        c = 3;// case之前不应该有代码
+        c = 3;// case涔嬪墠涓嶅簲璇ユ湁浠ｇ爜
     case 2:
         //
         c = 2;
