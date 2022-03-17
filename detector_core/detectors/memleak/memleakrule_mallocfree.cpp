@@ -4,6 +4,7 @@
 MemLeakRuleMallocFree::MemLeakRuleMallocFree() : Rule("MemLeakRuleMallocFree")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Suggest, m_name,
+        "malloc/free are not recommended. new/delete are recommended.",
         U8("不建议使用malloc/free，请使用new/delete替代"));
 }
 

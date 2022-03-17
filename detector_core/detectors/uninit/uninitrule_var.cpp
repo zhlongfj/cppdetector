@@ -4,7 +4,9 @@
 UninitRuleVar::UninitRuleVar() : Rule("UninitRuleVar"),
                                  m_uninitRuleVarHelper(make_unique<UninitRuleVariableDefinitionHelper>()) {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Error, m_name,
-                                             U8("基础类型变量可能未初始化，请确认（变量声明与初始化尽量在同一个语句）"));
+        "The basic type of variables may not be initialized, please confirm "\
+        "(variable declaration and initialization should be in the same statement)",
+        U8("基础类型变量可能未初始化，请确认（变量声明与初始化尽量在同一个语句）"));
 }
 
 UninitRuleVar::~UninitRuleVar() = default;

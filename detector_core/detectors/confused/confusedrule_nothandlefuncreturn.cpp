@@ -1,4 +1,4 @@
-#include "confusedrule_nothandlefuncreturn.h"
+﻿#include "confusedrule_nothandlefuncreturn.h"
 #include "detectorcommon/detectorhelp.h"
 #include "../../common/stringhelper.h"
 #include "detectorcommon/functiondefinition.h"
@@ -7,6 +7,7 @@ ConfusedRuleNotHandleFuncReturn::ConfusedRuleNotHandleFuncReturn() : Rule("Confu
 , m_functionDefinition(make_unique<FunctionDefinition>())
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Error, m_name,
+        "The function returns a value, but does not process it.",
         U8("函数有返回值，却没有处理"));
 }
 

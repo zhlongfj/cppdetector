@@ -6,6 +6,7 @@
 OperationRuleBitwiseWithBool::OperationRuleBitwiseWithBool() : Rule("OperationRuleBitwiseWithBool")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Error, m_name,
+        "Bitwise operations on bool will cause unexpected results.",
         U8("对bool进行位操作将导致非预期结果"));
 }
 

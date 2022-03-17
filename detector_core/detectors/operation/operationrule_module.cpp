@@ -5,6 +5,7 @@
 OperationRuleModule::OperationRuleModule() : Rule("OperationRuleModule")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Error, m_name,
+        "The modulo condition is always true or false.",
         U8("取模的判断条件总是为真或为假"));
 }
 

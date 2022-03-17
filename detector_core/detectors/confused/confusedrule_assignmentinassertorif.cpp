@@ -6,6 +6,7 @@
 ConfusedRuleAssignmentInAssertOrIf::ConfusedRuleAssignmentInAssertOrIf() : Rule("ConfusedRuleAssignmentInAssertOrIf")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Error, m_name,
+        "Confusing assignment. Put the assignment statement inside an assertion statement of if statement.",
         U8("令人迷惑的赋值，将赋值语句放到断言或if中"));
 }
 

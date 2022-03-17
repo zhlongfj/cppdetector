@@ -7,7 +7,8 @@ ConfusedRuleBreak::ConfusedRuleBreak() : Rule("ConfusedRuleBreak")
     , m_braceHelper(make_unique<BraceHelper>())
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
-                                             U8("令人迷惑的break，可能导致循环只执行一遍"));
+        "Confusing break. This may cause the loop to be executed only once.",
+        U8("令人迷惑的break，可能导致循环只执行一遍"));
 }
 
 ConfusedRuleBreak::~ConfusedRuleBreak() = default;

@@ -4,6 +4,7 @@
 MemLeakRuleNewWithOutDelete::MemLeakRuleNewWithOutDelete() : Rule("MemLeakRuleNewWithOutDelete")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "new an object. Forget to delete or use free to release memory.",
         U8("new了一个对象，忘记delete或采用free来释放内存"));
 }
 

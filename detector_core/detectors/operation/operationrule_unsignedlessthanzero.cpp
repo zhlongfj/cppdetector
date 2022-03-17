@@ -4,7 +4,8 @@
 
 OperationRuleUnsignedLessThanZero::OperationRuleUnsignedLessThanZero() : Rule("OperationRuleUnsignedLessThanZero") {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Error, m_name,
-                                             U8("无符号数判断小于0，结果恒为false"));
+        "The unsigned number is judged to be less than 0, and the result is always false.",
+        U8("无符号数判断小于0，结果恒为false"));
 }
 
 bool OperationRuleUnsignedLessThanZero::detectCore(const string &code, const ErrorFile &errorFile) {

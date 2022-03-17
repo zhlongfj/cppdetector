@@ -5,6 +5,7 @@
 OperationRuleBitwiseShiftToNegative::OperationRuleBitwiseShiftToNegative() : Rule("OperationRuleBitwiseShiftToNegative")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Critical, m_name,
+        "Shifting negative numbers will lead to unexpected results.",
         U8("对负数进行位移将导致非预期结果"));
 }
 

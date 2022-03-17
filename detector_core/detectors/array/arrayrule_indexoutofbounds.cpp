@@ -12,6 +12,8 @@ ArrayRuleIndexOutOfBounds::ArrayRuleIndexOutOfBounds(std::unique_ptr<ArrayRuleHe
     , m_helper(move(helper))
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Critical, m_name,
+        "Array index may cause out-of-bounds access. "\
+        "Please check whether the maximum value of the array index is greater than the array's length or less than 0.",
         U8("数组下标可能产生越界访问，请检查数组下标的最大取值是否超过了数组长度或小于0"));
 }
 

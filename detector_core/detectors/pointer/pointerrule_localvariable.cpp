@@ -3,7 +3,8 @@
 
 PointerRuleLocalVariable::PointerRuleLocalVariable() : Rule("PointerRuleLocalVariable") {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Critical, m_name,
-                                             U8("函数返回局部变量的地址或引用"));
+        "The function returns the address or reference of the local variable.",
+        U8("函数返回局部变量的地址或引用"));
 }
 
 bool PointerRuleLocalVariable::detectCore(const string &code, const ErrorFile &errorFile) {

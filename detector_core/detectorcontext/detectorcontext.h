@@ -55,5 +55,6 @@ private:
 protected:
     string m_resultDir;
     string m_resultName;
+    string m_resultNameZH;
     string m_ruleNamePath;
 };

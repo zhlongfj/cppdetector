@@ -4,6 +4,7 @@
 LambdaRuleCatchByReference::LambdaRuleCatchByReference() : Rule("LambdaRuleCatchByReference")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "Lambda expressions should not capture all variables by reference.",
         U8("Lambda expressions cannot capture all variables by reference."));
 }
 

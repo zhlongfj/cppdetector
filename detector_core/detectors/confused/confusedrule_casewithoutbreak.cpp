@@ -5,6 +5,7 @@
 ConfusedRuleCaseWithoutBreak::ConfusedRuleCaseWithoutBreak() : Rule("ConfusedRuleCaseWithoutBreak")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "Confusing switch case. Not every case statement contains a break. Please make sure whether some are omitted.",
         U8("令人迷惑的switch case，不是所有的case语句都有break，请确认是否遗漏"));
 }
 

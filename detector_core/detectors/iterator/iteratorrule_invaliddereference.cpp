@@ -5,6 +5,7 @@
 IteratorRuleInvalidDereference::IteratorRuleInvalidDereference() : Rule("IteratorRuleInvalidDereference")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Critical, m_name,
+        "Dereference the end() iterator.",
         U8("解引用end()迭代器"));
 }
 

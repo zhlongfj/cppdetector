@@ -5,6 +5,7 @@
 SizeOfRuleRepetition::SizeOfRuleRepetition() : Rule("SizeOfRuleRepetition")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "Meaningless reuse of sizeof, which may be caused by an error.",
         U8("无意义的重复使用sizeof，可能是失误造成的"));
 }
 

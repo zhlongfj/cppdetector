@@ -6,6 +6,7 @@
 LoopRuleSuggestauto::LoopRuleSuggestauto() : Rule("LoopRuleSuggestauto")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Suggest, m_name,
+        "An auto declaration is recommended for the iteration variables in a for loop.",
         U8("for循环中的迭代变量建议采用auto声明"));
 }
 

@@ -16,6 +16,7 @@ ArrayRuleIndexCheckDefectively::ArrayRuleIndexCheckDefectively(std::unique_ptr<A
     , m_helper(move(helper))
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Critical, m_name,
+        "There is a defect in the protection of array index. It is usually because the boundary value of the array length is omitted.",
         U8("对数组下标的保护存在缺陷，通常是漏掉了数组长度的边界值"));
 }
 

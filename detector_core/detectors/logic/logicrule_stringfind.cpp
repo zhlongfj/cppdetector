@@ -5,6 +5,7 @@
 LogicRuleStringFind::LogicRuleStringFind() : Rule("LogicRuleStringFind")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Error, m_name,
+        "The find return value of std::string should be compared with the return value of string::npos rather than 0. Please make sure whether it is misused.",
         U8("std::string的find返回值应该与string::npos比较，且只能用== 或 !=，请确认是否误用"));
 }
 

@@ -5,7 +5,12 @@
 SizeOfRuleFuncParameter::SizeOfRuleFuncParameter() : Rule("SizeOfRuleFuncParameter")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Error, m_name,
-        U8("数组作为函数参数，在函数内对数组变量使用sizeof获取数组占用空间大小，但是数组参数本质上是指针，返回的是指针大小，即32位下是4，64位下是8"));
+        "The array is used as a function parameter. Within the function, "\
+        "use sizeof on the array variable to obtain the space size occupied by the array. "\
+        "But the array parameter is essentially a pointer, and the size of the pointer is returned, "\
+        "that is, 4 in 32-bit and 8 in 64-bit.",
+        U8("数组作为函数参数，在函数内对数组变量使用sizeof获取数组占用空间大小，"\
+            "但是数组参数本质上是指针，返回的是指针大小，即32位下是4，64位下是8"));
 }
 
 bool SizeOfRuleFuncParameter::detectCore(const string& code, const ErrorFile& errorFile)

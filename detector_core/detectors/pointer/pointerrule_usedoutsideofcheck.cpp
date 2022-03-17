@@ -4,6 +4,9 @@
 PointerRuleUsedOutsideOfCheck::PointerRuleUsedOutsideOfCheck() : Rule("PointerRuleUsedOutsideOfCheck")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Critical, m_name,
+        "Check pointer nullability first and then dereference outside the nullable scope. "\
+        "Because pointer nullability check implies that the pointer may be null in the current context, "\
+        "it is recommended that nullability check protection be added to pointers that are not in the nullable scope.",
         U8("指针先判空，然后在判空作用域外解引用，因为指针判空暗示当前上下文该指针可能为空，因此建议对没有在判空作用域的指针添加判空保护。"));
 }
 

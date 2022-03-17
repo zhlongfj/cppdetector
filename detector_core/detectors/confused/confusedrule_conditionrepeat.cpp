@@ -1,4 +1,4 @@
-#include "confusedrule_conditionrepeat.h"
+﻿#include "confusedrule_conditionrepeat.h"
 #include "detectorcommon/detectorhelp.h"
 #include "../../common/stringhelper.h"
 #include "common/maphelp.h"
@@ -8,6 +8,7 @@ ConfusedRuleConditionRepeat::ConfusedRuleConditionRepeat() : Rule("ConfusedRuleC
 , m_ifDefinition(make_unique<IfDefinition>())
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "Confusing judgment condition. The judgment condition already exists.",
         U8("令人迷惑的判断条件，判断条件重复"));
 }
 

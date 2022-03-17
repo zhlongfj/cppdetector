@@ -4,7 +4,8 @@
 
 LogicRuleBaseValue::LogicRuleBaseValue() : Rule("LogicRuleBaseValue") {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
-                                             U8("总是为真或为假的判断条件"));
+        "Judgment condition that is always true or false",
+        U8("总是为真或为假的判断条件"));
 }
 
 bool LogicRuleBaseValue::detectCore(const string &code, const ErrorFile &errorFile) {

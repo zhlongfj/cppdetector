@@ -5,6 +5,7 @@
 ConfusedRuleConstructor::ConfusedRuleConstructor() : Rule("ConfusedRuleConstructor")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "Confusing constructor. A non-explicit constructor with a single parameter may lead to implicit conversion and cause ambiguity.",
         U8("令人迷惑的构造函数，带有1个参数的非显式构造函数可能导致隐性转换造成二义性"));
 }
 

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "../3rdparty/json.hpp"
 
 using namespace nlohmann;
@@ -9,10 +9,31 @@ public:
 
     json toJSON(shared_ptr<RuleContent> ruleContent)
     {
+        json jRuleContent = toJSON_RuleContentCore(ruleContent);
+        jRuleContent["msg"] = ruleContent->msg;
+        jRuleContent["msg_zh"] = ruleContent->msg_zh;
+        return jRuleContent;
+    }
+
+    json toJSON_RuleContentEN(shared_ptr<RuleContent> ruleContent)
+    {
+        json jRuleContent = toJSON_RuleContentCore(ruleContent);
+        jRuleContent["msg"] = ruleContent->msg;
+        return jRuleContent;
+    }
+
+    json toJSON_RuleContentZH(shared_ptr<RuleContent> ruleContent)
+    {
+        json jRuleContent = toJSON_RuleContentCore(ruleContent);
+        jRuleContent["msg_zh"] = ruleContent->msg_zh;
+        return jRuleContent;
+    }
+
+    json toJSON_RuleContentCore(shared_ptr<RuleContent> ruleContent)
+    {
         json jRuleContent;
         jRuleContent["rule"] = ruleContent->rule;
         jRuleContent["priority"] = ruleContent->priority;
-        jRuleContent["msg"] = ruleContent->msg;
         return jRuleContent;
     }
 
@@ -21,7 +42,8 @@ public:
         return make_shared<RuleContent>(
             (ErrorPriority)jData["priority"].get<int>(),
             jData["rule"].get<string>(),
-            jData["msg"].get<string>());
+            jData["msg"].get<string>(),
+            jData["msg_zh"].get<string>());
     }
 
     DetectorRuleContents fromJSON(json jData)
@@ -54,10 +76,18 @@ public:
             jData["path"].get<string>());
     }
 
-    json toJSON(shared_ptr<RuleError> ruleError)
+    json toJSONEN(shared_ptr<RuleError> ruleError)
     {
         json jRuleError;
-        jRuleError["rulecontent"] = toJSON(ruleError->ruleContent);
+        jRuleError["rulecontent"] = toJSON_RuleContentEN(ruleError->ruleContent);
+        jRuleError["errorfile"] = toJSON(ruleError->errorFile);
+        return jRuleError;
+    }
+
+    json toJSONZH(shared_ptr<RuleError> ruleError)
+    {
+        json jRuleError;
+        jRuleError["rulecontent"] = toJSON_RuleContentZH(ruleError->ruleContent);
         jRuleError["errorfile"] = toJSON(ruleError->errorFile);
         return jRuleError;
     }

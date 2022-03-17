@@ -5,6 +5,8 @@ ConfusedRuleDiffVariableWithInitAndCondition::ConfusedRuleDiffVariableWithInitAn
     : Rule("ConfusedRuleDiffVariableWithInitAndCondition")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "In the judgment condition, the initialized variable is inconsistent with the comparison variable, "\
+        "please confirm that it is correct.",
         U8("在判断条件中，初始化的变量与比较变量不一致，请确认是否正确"));
 }
 

@@ -1,4 +1,4 @@
-#include "detectorcommon/detectorhelp.h"
+﻿#include "detectorcommon/detectorhelp.h"
 #include "detectorcommon/functiondefinition.h"
 #include "detectorcommon/variabledefinition.h"
 #include "detectorcommon/classdefinition.h"
@@ -12,6 +12,7 @@ VariableRuleGlobal::VariableRuleGlobal() : Rule("VariableRuleGlobal")
     , m_classDefinition(make_unique<ClassDefinition>())
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "Objects with static storage duration (global variables, static variables, static class member variables) must be of POD type.(except constexpr)",
         U8("静态生存周期的对象（全局变量，静态变量，静态类成员变量），都必须是POD类型(constexpr除外)。"));
 }
 

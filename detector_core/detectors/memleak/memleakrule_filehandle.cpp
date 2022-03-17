@@ -4,6 +4,7 @@
 MemLeakRuleFileHandle::MemLeakRuleFileHandle() : Rule("MemLeakRuleFileHandle")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "A file handle leak",
         U8("文件句柄泄漏"));
 }
 

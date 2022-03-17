@@ -5,6 +5,7 @@ InlineRuleSpecialClassMethod::InlineRuleSpecialClassMethod() : Rule("InlineRuleS
     , classDefinition(make_unique<ClassDefinition>())
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Suggest, m_name,
+        "Do not make special class methods inline: constructor, destructor, virtual function.",
         U8("不要将特殊的类方法设置为内联：构造函数，析构函数，虚函数"));
 }
 

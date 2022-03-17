@@ -22,6 +22,7 @@ DetectorContext::DetectorContext(const string& resultDir, const string& resultNa
     : m_resultDir(resultDir)
     , m_resultName(resultName)
 {
+    m_resultNameZH = string(m_resultName).insert(m_resultName.rfind(".json"), "_zh");
 }
 
 DetectorErrors DetectorContext::detectAll(const string& codePath)
@@ -76,6 +77,7 @@ DetectorErrors DetectorContext::detectWithRuleNames(const string& codePath, cons
     detect(codePath);
     auto detectorErrors = getDetectorErrors();
     DetectorCommon().setDetectorErrors((filesystem::path(resultDir) / m_resultName).string(), detectorErrors);
+    DetectorCommon().setDetectorErrorsZH((filesystem::path(resultDir) / m_resultNameZH).string(), detectorErrors);
     return detectorErrors;
 }
 

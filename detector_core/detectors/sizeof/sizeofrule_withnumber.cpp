@@ -5,6 +5,7 @@
 SizeOfRuleWithNumber::SizeOfRuleWithNumber() : Rule("SizeOfRuleWithNumber")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "When sizeof is used for a numeric constant, please check whether it makes sense.",
         U8("对一个数字常量使用sizeof，请确认是否有意义"));
 }
 

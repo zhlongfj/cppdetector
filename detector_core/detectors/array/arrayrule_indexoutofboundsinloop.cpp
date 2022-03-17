@@ -15,6 +15,7 @@ ArrayRuleIndexOutOfBoundsInLoop::ArrayRuleIndexOutOfBoundsInLoop(std::unique_ptr
     , m_helper(move(helper))
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Critical, m_name,
+        "The index in the loop statement is out of bounds.",
         U8("循环语句中下标越界"));
 }
 

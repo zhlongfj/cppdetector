@@ -6,6 +6,7 @@
 PointerRuleUsedDanglingPointer::PointerRuleUsedDanglingPointer() : Rule("PointerRuleUsedDanglingPointer")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Critical, m_name,
+        "Use a dangling pointer.",
         U8("使用悬垂指针"));
 }
 

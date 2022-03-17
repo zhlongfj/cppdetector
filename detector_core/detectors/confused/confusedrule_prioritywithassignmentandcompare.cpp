@@ -7,6 +7,7 @@ ConfusedRulePriorityWithAssignmentAndCompare::ConfusedRulePriorityWithAssignment
     , m_ifDefinition(make_unique<IfDefinition>())
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "Confusing priority. The priority of comparison operator is higher than the priority of assignment operator. Please make sure whether parentheses are required.",
         U8("令人迷惑的优先级，比较运算符高于赋值运算符，请确认是否需要添加括号"));
 }
 

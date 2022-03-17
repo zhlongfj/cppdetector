@@ -1,4 +1,4 @@
-#include "looprule_wrongstepdirection.h"
+﻿#include "looprule_wrongstepdirection.h"
 #include "detectorcommon/detectorhelp.h"
 #include "../../common/stringhelper.h"
 #include "looprule_helper.h"
@@ -8,6 +8,7 @@ LoopRuleWrongStepDirection::LoopRuleWrongStepDirection() : Rule("LoopRuleWrongSt
 , m_forDefinition(make_unique<ForDefinition>())
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "Please check the iteration variable in the for loop is in the opposite direction",
         U8("for循环中的迭代变量方向是否反了"));
 }
 

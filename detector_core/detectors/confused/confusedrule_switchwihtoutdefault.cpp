@@ -4,6 +4,7 @@
 ConfusedRuleSwitchWithoutDefault::ConfusedRuleSwitchWithoutDefault() : Rule("ConfusedRuleSwitchWithoutDefault")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "Confusing switch without default. Scenes may be missed.",
         U8("令人迷惑的switch，缺少default，可能遗漏场景"));
 }
 

@@ -21,7 +21,9 @@ struct RuleContent
     ErrorPriority priority = ErrorPriority::Suggest;
     string rule;
     string msg;
-    RuleContent(ErrorPriority priority, const string& rule, const string& msg) : priority(priority), rule(rule), msg(msg) {}
+    string msg_zh;
+    RuleContent(ErrorPriority priority, const string& rule, const string& msg, const string& msg_zh)
+        : priority(priority), rule(rule), msg(msg), msg_zh(msg_zh) {}
     ~RuleContent() {}
 };
 
@@ -80,6 +82,7 @@ public:
     void setDetectorRuleNames(const string& configPath, const DetectorRuleNames& detectorRuleNames);
     void setDetectorRuleContents(const string& configPath, const DetectorRuleContents& detectorRuleContents);
     void setDetectorErrors(const string& configPath, const DetectorErrors& detectorErrors);
+    void setDetectorErrorsZH(const string& configPath, const DetectorErrors& detectorErrors);
     void printDetectorErrorToTerminal(const DetectorErrors& detectorErrors);
     DetectorErrors getDetectorErrors(const string& configPath);
     vector<string> getPathsFromConfigPath(const string& configPath);

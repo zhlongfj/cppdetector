@@ -64,6 +64,12 @@ cmake --build . --config RelWithDebInfo
 * clion打开cppdetector根目录
 * Visual Studio->“打开本地文件夹”，选中cppdetector根目录
 
+#### 运行脚本编译
+```
+cd buildscript
+buildwithcmd.bat
+```
+
 ### Mac
 #### cmake command
 
@@ -160,5 +166,4 @@ email: zhlongfj@sina.com
 [License MIT](LICENSE)
 
 [badags](https://shields.io/category/social)
-[谷歌C++编程规范]
-(https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/)
+[谷歌C++编程规范](https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/)

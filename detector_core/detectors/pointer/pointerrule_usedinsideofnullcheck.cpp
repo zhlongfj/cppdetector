@@ -1,4 +1,4 @@
-#include "pointerrule_usedinsideofnullcheck.h"
+﻿#include "pointerrule_usedinsideofnullcheck.h"
 #include "pointerrule_helper.h"
 #include "detectorcommon/detectorhelp.h"
 #include "detectorcommon/ifdefinition.h"
@@ -7,6 +7,7 @@ PointerRuleUsedInsideOfNULLCheck::PointerRuleUsedInsideOfNULLCheck() : Rule("Poi
 , m_ifDefinition(make_unique<IfDefinition>())
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Critical, m_name,
+        "Check pointer nullability first and then dereference within the nullable scope.",
         U8("指针先判空，然后在判空作用域内解引用。"));
 }
 

@@ -5,6 +5,7 @@
 ArrayRuleMemsetZeroByte::ArrayRuleMemsetZeroByte() : Rule("ArrayRuleMemsetZeroByte")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Error, m_name,
+        "The third parameter of memset is the number of bytes to be formated and should not be 0.",
         U8("memset第三个参数是要格式化的字节数，不应该为0"));
 }
 

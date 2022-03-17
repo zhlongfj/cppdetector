@@ -6,6 +6,7 @@
 LoopRuleOutOfBounds::LoopRuleOutOfBounds() : Rule("LoopRuleOutOfBounds")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "The iteration variables in for loop are modified and may be out of range, resulting in an error to the loop.",
         U8("for循环中的迭代变量被修改,可能超过范围,导致循环出错"));
 }
 

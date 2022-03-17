@@ -5,6 +5,7 @@
 LogicRuleAssignSelf::LogicRuleAssignSelf() : Rule("LogicRuleAssignSelf")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "Assign a value to itself. Please make sure whether the value you entered is wrong.",
         U8("给自己赋值，请确认是否写错"));
 }
 

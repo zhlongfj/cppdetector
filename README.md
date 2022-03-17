@@ -64,6 +64,12 @@ cmake --build . --config RelWithDebInfo
 * clion opens the root directory of the cppdetector  
 * Visual Studio->"Open Local Folder" and select root directory of the cppdetector
 
+#### run script to build
+```
+cd buildscript
+buildwithcmd.bat
+```
+
 ### Mac
 #### cmake command
 
@@ -160,5 +166,4 @@ email: zhlongfj@sina.com
 [License MIT](LICENSE)
 
 [badags](https://shields.io/category/social)
-[Google C++ Style Guide]
-(https://google.github.io/styleguide/cppguide.html)
+[Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)

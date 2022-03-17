@@ -9,6 +9,7 @@ AccessControlRuleMemberVariable::AccessControlRuleMemberVariable() : Rule("Acces
     , variableDefinition(make_unique<VariableDefinition>())
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "Do not set the access to member variables to public.",
         U8("不要将成员变量访问权限设置成public"));
 }
 

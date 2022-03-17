@@ -5,6 +5,7 @@
 LogicRuleIncorrectOperation::LogicRuleIncorrectOperation() : Rule("LogicRuleIncorrectOperation")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "A logical operation that is always true or false. Or the same judgment condition is written twice.",
         U8("总是为真或为假的逻辑运算，或同一判断条件写两遍"));
 }
 

@@ -93,7 +93,8 @@ void DetectorCommon::setDetectorRuleContents(const string& configPath, const Det
     transform(detectorRuleContents.begin(), detectorRuleContents.end(), std::inserter(datas, datas.end()), [](const pair<string, RuleContents>& item) {
         auto sourceRuleContents = item.second;
         vector<json> ruleContents(sourceRuleContents.size());
-        transform(sourceRuleContents.begin(), sourceRuleContents.end(), ruleContents.begin(), [](const auto& item1) {return JSONParseHelper().toJSON(item1); });
+        transform(sourceRuleContents.begin(), sourceRuleContents.end(), ruleContents.begin(), [](const auto& item1) {
+            return JSONParseHelper().toJSON(item1); });
         return make_pair(item.first, ruleContents);
         });
     json data = datas;
@@ -107,7 +108,22 @@ void DetectorCommon::setDetectorErrors(const string& configPath, const DetectorE
         auto sourceRuleErrors = item.second;
         vector<json> ruleErrors(sourceRuleErrors.size());
         transform(sourceRuleErrors.begin(), sourceRuleErrors.end(), ruleErrors.begin(), [](const auto& element) {
-            return JSONParseHelper().toJSON(element); });
+            return JSONParseHelper().toJSONEN(element); });
+        return make_pair(item.first, ruleErrors);
+        });
+
+    json data = datas;
+    FileHelp().write(configPath, data.dump());
+}
+
+void DetectorCommon::setDetectorErrorsZH(const string& configPath, const DetectorErrors& detectorErrors)
+{
+    map<string, json> datas;
+    transform(detectorErrors.begin(), detectorErrors.end(), std::inserter(datas, datas.end()), [](const pair<string, vector<shared_ptr<RuleError>>>& item) {
+        auto sourceRuleErrors = item.second;
+        vector<json> ruleErrors(sourceRuleErrors.size());
+        transform(sourceRuleErrors.begin(), sourceRuleErrors.end(), ruleErrors.begin(), [](const auto& element) {
+            return JSONParseHelper().toJSONZH(element); });
         return make_pair(item.first, ruleErrors);
         });
 
@@ -195,7 +211,7 @@ vector<string> DetectorCommon::getPathsFromConfigPath(const string& configPath)
 void DetectorCommon::generateGB2312Results(const string& resultDir)
 {
     filesystem::path resultsPath(resultDir);
-    auto results = FileHelp().parse((resultsPath / "results.json").generic_string());
+    auto results = FileHelp().parse((resultsPath / "results_zh.json").generic_string());
     auto resultsGB2321 = CodeConversion::utf8_to_gb2312(results);
     auto resultsGB2312Path = (resultsPath / "results_gb2321.json").generic_string();
     FileHelp().write(resultsGB2312Path, resultsGB2321);

@@ -5,6 +5,7 @@
 InlineRuleComplexFunction::InlineRuleComplexFunction() : Rule("InlineRuleComplexFunction")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Suggest, m_name,
+        "Inline functions cannot contain loops and switch statements.",
         U8("不要内联包含循环或 switch 语句的函数"));
 }
 

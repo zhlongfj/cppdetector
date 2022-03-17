@@ -5,6 +5,7 @@
 PointerRuleCheckAfterNew::PointerRuleCheckAfterNew() : Rule("PointerRuleCheckAfterNew")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Error, m_name,
+        "After C++03, new failures will throw an exception instead of returning NULL. There is no need to check whether the value is null.",
         U8("C++03以后，new失败会抛出异常而不是返回NULL，没有必要进行判空。"));
 }
 

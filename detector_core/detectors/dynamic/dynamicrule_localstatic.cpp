@@ -5,6 +5,7 @@
 DynamicRuleLocalStatic::DynamicRuleLocalStatic() : Rule("DynamicRuleLocalStatic")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Error, m_name,
+        "Local static variables may be used outside the dynamic library. When Android5.1 accesses across so, different so will instantiate an independent singleton, resulting in multiple instances in the system.",
         U8("可能在动态库外面使用的局部静态变量, Android5.1跨so访问时，不同so会实例化一份独立的单例，导致系统存在多实例"));
 }
 

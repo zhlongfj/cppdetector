@@ -4,6 +4,7 @@
 SingletonRuleThreadSafety::SingletonRuleThreadSafety() : Rule("SingletonRuleThreadSafety")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Error, m_name,
+        "This singleton implementation is not thread safe.",
         U8("不是线程安全的"));
 }
 

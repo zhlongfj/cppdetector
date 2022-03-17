@@ -6,6 +6,7 @@
 LoopRuleWrongVariable::LoopRuleWrongVariable() : Rule("LoopRuleWrongVariable")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "The iteration variables in for loop are not consistent.",
         U8("for循环迭代变量不一致"));
 }
 

@@ -5,6 +5,7 @@
 ConfusedRuleReturnBool::ConfusedRuleReturnBool() : Rule("ConfusedRuleReturnBool")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Error, m_name,
+        "Confusing function return value. The return value type is bool, but the return statement is a different type.",
         U8("令人迷惑的函数返回值，返回值类型是bool，但是return语句是其他类型"));
 }
 

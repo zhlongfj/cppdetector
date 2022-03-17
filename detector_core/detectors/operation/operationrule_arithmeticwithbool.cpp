@@ -5,6 +5,7 @@
 OperationRuleArithmeticWithBool::OperationRuleArithmeticWithBool() : Rule("OperationRuleArithmeticWithBool")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Error, m_name,
+        "Arithmetic operations on bool may cause unpredictable results.",
         U8("对bool进行四则运算可能会导致不可预知的结果"));
 }
 

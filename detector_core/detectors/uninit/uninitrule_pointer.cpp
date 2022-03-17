@@ -7,6 +7,8 @@ UninitRulePointer::UninitRulePointer() : Rule("UninitRulePointer")
     , m_definition(make_unique<VariableDefinition>())
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "The pointer is not initialized. Please check "\
+        "( try to make sure that the variable declaration and initialization are in the same statement).",
         U8("指针未初始化，请确认（变量声明与初始化尽量在同一个语句）"));
 }
 

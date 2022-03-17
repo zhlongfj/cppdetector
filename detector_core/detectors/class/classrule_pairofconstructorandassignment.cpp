@@ -6,6 +6,7 @@ VariableRulePairOfConstructorAndAssignment::VariableRulePairOfConstructorAndAssi
     , m_classDefinition(make_unique<ClassDefinition>())
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "Copy constructor/assignment operator or move constructor/assignment operator must occur in pairs.",
         U8("拷贝构造函数/赋值运算符或者移动构造函数/移动赋值运算符需要成对出现"));
 }
 

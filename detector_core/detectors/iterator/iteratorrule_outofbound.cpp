@@ -5,6 +5,7 @@
 
 IteratorRuleOutOfBound::IteratorRuleOutOfBound() : Rule("IteratorRuleOutOfBound") {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Critical, m_name,
+        "Container iterator out of bounds.",
         U8("容器迭代器越界"));
 }
 

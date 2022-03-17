@@ -4,6 +4,7 @@
 
 PointerRuleReturnNull::PointerRuleReturnNull() : Rule("PointerRuleReturnNull") {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Critical, m_name,
+        "The return value of the function may be bull. Please check the nullability before using it.",
         U8("函数返回值可能为空，请先判空再使用"));
 }
 

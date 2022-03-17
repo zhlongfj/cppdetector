@@ -6,6 +6,7 @@
 OperationRuleZeroDivision::OperationRuleZeroDivision() : Rule("OperationRuleZeroDivision")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Critical, m_name,
+        "Divide by zero or modulo zero",
         U8("被零除或对零求模"));
 }
 

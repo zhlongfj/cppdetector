@@ -5,6 +5,7 @@
 ConfusedRuleStatementOutsideOfCase::ConfusedRuleStatementOutsideOfCase() : Rule("ConfusedRuleStatementOutsideOfCase")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "Confusing switch case. All the codes in switch should be based on a case condition.",
         U8("令人迷惑的switch case，switch中的代码都应该位于某个case条件中"));
 }
 

@@ -1,4 +1,4 @@
-#include "sizeofrule_pointer.h"
+﻿#include "sizeofrule_pointer.h"
 #include "detectorcommon/detectorhelp.h"
 #include "../../common/stringhelper.h"
 #include "detectorcommon/variabledefinition.h"
@@ -7,6 +7,7 @@ SizeOfRulePointer::SizeOfRulePointer() : Rule("SizeOfRulePointer")
 , m_variableDefinition(make_unique<VariableDefinition>())
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "Make sure that sizeof is used correctly for pointers",
         U8("对指针使用sizeof，请确认是否正确"));
 }
 

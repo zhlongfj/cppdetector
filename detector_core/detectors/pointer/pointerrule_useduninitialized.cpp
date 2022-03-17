@@ -7,6 +7,7 @@
 PointerRuleUsedUninitialized::PointerRuleUsedUninitialized() : PointerRuleUsedUninitializedOrNull("PointerRuleUsedUninitialized")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Critical, m_name,
+        "Use an uninitialized pointer (wild pointer).",
         U8("使用未初始化的指针（野指针）。"));
 }
 

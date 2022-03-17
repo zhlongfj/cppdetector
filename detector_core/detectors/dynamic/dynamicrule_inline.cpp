@@ -5,6 +5,7 @@
 DynamicRuleInline::DynamicRuleInline() : Rule("DynamicRuleInline")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Error, m_name,
+        "All members within the parent and child classes are implemented in header files. When when a safe conversion (dynamatic_cast) is performed outside the dynamic library, android5.1 will fail to convert.",
         U8("父类和子类所有成员都在头文件实现，在动态库外，进行安全转换（dynamatic_cast）时, android5.1会转换失败"));
 }
 

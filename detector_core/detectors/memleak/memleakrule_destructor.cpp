@@ -4,6 +4,9 @@
 MemLeakRuleDestructor::MemLeakRuleDestructor() : Rule("MemLeakRuleDestructor")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "If the class cannot be inherited, please modify the class with final; "\
+        "If the class can be inherited, please modify the destructor with virtual. "\
+        "Otherwise, when the base class pointer is deleted, the destructor of the child class will not called, which may cause memory leaks.",
         U8("如果class不会被继承，请用final修饰class；如果class会被继承，请用virtual修饰析构函数，否则delete基类指针时，不会调用子类的析构函数可能导致内存泄漏"));
 }
 

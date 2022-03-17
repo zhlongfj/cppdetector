@@ -6,6 +6,7 @@
 PointerRuleIfNullDefect::PointerRuleIfNullDefect() : Rule("PointerRuleIfNullDefect")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Critical, m_name,
+        "The expression is null and the logical AND dereferences the pointer.",
         U8("表达式判空并逻辑与对指针进行解引用"));
 }
 

@@ -16,6 +16,7 @@ ArrayRuleIndexUsedBeforeCheck::ArrayRuleIndexUsedBeforeCheck(std::unique_ptr<Arr
     , m_helper(move(helper))
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Error, m_name,
+        "Use the index first and then check whether the index is out of bounds.",
         U8("先使用下标再检查下表是否越界"));
 }
 

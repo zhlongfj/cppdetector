@@ -7,6 +7,7 @@ InlineRuleTenLines::InlineRuleTenLines() : Rule("InlineRuleTenLines")
     , braceHelper(make_unique<BraceHelper>())
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Suggest, m_name,
+        "Do not define a function with more than 10 lines as an inline function.",
         U8("将不要将10行以上的函数定义成内联函数"));
 }
 

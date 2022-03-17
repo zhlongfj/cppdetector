@@ -5,6 +5,7 @@
 LogicRuleExpressionRepetition::LogicRuleExpressionRepetition() : Rule("LogicRuleExpressionRepetition")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "The logic and expression are repeated.Please make sure whether it is correct.",
         U8("逻辑与表达式重复，请确认是否正确"));
 }
 

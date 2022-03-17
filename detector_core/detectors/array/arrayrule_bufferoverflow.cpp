@@ -13,6 +13,7 @@ ArrayRuleBufferOverflow::ArrayRuleBufferOverflow(std::unique_ptr<ArrayRuleHelper
 , m_helper(move(helper))
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Critical, m_name,
+        "Buffer is accessed out of bounds. The length of the buffer to read and write has exceeded the size of the buffer.",
         U8("访问缓冲区越界，读写缓冲区的长度超过了缓冲区本身的大小"));
 }
 

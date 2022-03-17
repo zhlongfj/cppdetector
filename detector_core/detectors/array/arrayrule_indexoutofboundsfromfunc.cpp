@@ -14,6 +14,7 @@ ArrayRuleIndexOutOfBoundsFromFunc::ArrayRuleIndexOutOfBoundsFromFunc(std::unique
     , m_helper(move(helper))
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Critical, m_name,
+        "The maximum return value of the function may be the size of the buffer, which may cause out of bounds.",
         U8("函数的返回值最大可能为缓冲区大小，可能造成越界"));
 }
 

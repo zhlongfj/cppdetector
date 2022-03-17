@@ -5,6 +5,7 @@
 PointerRuleNotCheck::PointerRuleNotCheck() : Rule("PointerRuleNotCheck")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Critical, m_name,
+        "Some check pointer nullability, but some is not.",
         U8("部分对指针判空，而部分没有判空。"));
 }
 

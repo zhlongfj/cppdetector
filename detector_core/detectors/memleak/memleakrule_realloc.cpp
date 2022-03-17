@@ -4,6 +4,7 @@
 MemLeakRuleRealloc::MemLeakRuleRealloc() : Rule("MemLeakRuleRealloc")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "Realloc is not recommended",
         U8("realloc年轻人把握不住，让基础库实现者来把握"));
 }
 

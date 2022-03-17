@@ -7,6 +7,7 @@ InlineRuleRecursion::InlineRuleRecursion() : Rule("InlineRuleRecursion")
     , braceHelper(make_unique<BraceHelper>())
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Suggest, m_name,
+        "Do not define a recursive function as an inline function.",
         U8("请不要将递归函数定义成内联函数"));
 }
 

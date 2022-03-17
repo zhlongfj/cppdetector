@@ -5,6 +5,7 @@
 ConfusedRulePriority::ConfusedRulePriority() : Rule("ConfusedRulePriority")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "Confusing priority. The priority of + is higher than <<.",
         U8("令人迷惑的优先级，+优先级高于<<"));
 }
 

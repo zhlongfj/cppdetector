@@ -4,7 +4,8 @@
 
 OperationRuleFloat::OperationRuleFloat() : Rule("OperationRuleFloat") {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Error, m_name,
-                                             U8("对浮点数或双精度数不能用相等或不相等来比较"));
+        "Floats or doubles cannot be compared by equality or inequality.",
+        U8("对浮点数或双精度数不能用相等或不相等来比较"));
 }
 
 bool OperationRuleFloat::detectCore(const string &code, const ErrorFile &errorFile) {

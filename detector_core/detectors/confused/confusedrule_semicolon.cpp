@@ -5,6 +5,7 @@
 ConfusedRuleSemicolon::ConfusedRuleSemicolon() : Rule("ConfusedRuleSemicolon")
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Warning, m_name,
+        "Confusing. It is possibly mistyped.",
         U8("令人迷惑的;，可能是误输入的"));
 }
 
