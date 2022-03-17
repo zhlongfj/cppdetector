@@ -139,6 +139,16 @@ eg: Array rule:
 "/Users/hualongzhang/work/cppdetector/supporting/detectorRuleNames.json" /Users/hualongzhang/work/cppdetector/bin/detectorResult
 ```
 
+## :gift:测试
+### windows
+
+run script to test cppdetector, you can also detect other code with changing code in run.bat
+
+```
+cd cppdetector\release\windows_x64
+run.bat
+```
+
 ## :stuck_out_tongue_winking_eye: Authors
 
 github: [zhlongfj](https://github.com/zhlongfj)

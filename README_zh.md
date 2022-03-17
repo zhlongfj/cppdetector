@@ -138,6 +138,17 @@ Param5 | 结果存放路径
 "/Users/hualongzhang/work/cppdetector/supporting/detectorRuleNames.json" /Users/hualongzhang/work/cppdetector/bin/detectorResult
 ```
 
+## :gift:测试
+### windows
+
+运行脚本进行测试，你也可以更改run.bat中的代码路径来检测其他代码
+
+```
+cd cppdetector\release\windows_x64
+run.bat
+```
+
+
 ## :stuck_out_tongue_winking_eye: 作者
 
 github: [zhlongfj](https://github.com/zhlongfj)

@@ -13,7 +13,7 @@ ELSEIF (APPLE)
 	MESSAGE(STATUS "Now is Apple system.")
 	set(VCPKG_ROOT /Users/hualongzhang/work/vcpkg)
 ELSEIF (UNIX)
-	MESSAGE(STATUS "Now is UNIX-like OS's.")
+	MESSAGE(STATUS "Now is UNIX-like OS.")
 ENDIF ()
 ENDIF ()
 
@@ -35,7 +35,6 @@ set(SOURCE_FILES main.cpp)
 
 #add_definitions(-DBUILD_STATIC)
 
-
 #vcpkg begin
 if(USE_VCPKG)
 	message("option for USE_VCPKG...")
@@ -47,6 +46,24 @@ endif()
 
 add_executable(cppdetector ${SOURCE_FILES})
 
+set(REL_WITH_DEBINFO_PATH ${EXECUTABLE_OUTPUT_PATH}/RelWithDebInfo)
+set(SUPPORTING_PATH ${PROJECT_SOURCE_DIR}/supporting)
+IF (WIN32)
+	MESSAGE(STATUS "copy file, Now is windows")
+	set(RELEASE_PATH ${PROJECT_SOURCE_DIR}/release/windows_x64)
+	add_custom_command(TARGET cppdetector POST_BUILD
+		COMMAND ${CMAKE_COMMAND} -E copy_directory
+		${REL_WITH_DEBINFO_PATH} ${RELEASE_PATH}/cppdetector)
+	add_custom_command(TARGET cppdetector POST_BUILD
+		COMMAND ${CMAKE_COMMAND} -E copy
+		${SUPPORTING_PATH}/exceptionconfig.json ${RELEASE_PATH}/config)
+ELSEIF (APPLE)
+	MESSAGE(STATUS "copy file, Now is Apple system.")
+ELSEIF (UNIX)
+	MESSAGE(STATUS "copy file, Now is UNIX-like OS.")
+ENDIF ()
+
+	
 include_directories(detector_core)
 add_subdirectory(detector_core)
 add_subdirectory(catch_tests)

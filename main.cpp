@@ -156,11 +156,8 @@ int main(int argc, char* argv[]) {
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
     //define something for Windows (32-bit and 64-bit, this part is common)
     string codeDir = R"delimiter(F:\work\git\cppdetector\detector_core)delimiter";
-    codeDir = R"ddd(F:\work\cppdetector\supporting\badcodesamples)ddd";
-    //codeDir = R"ddd(F:\git\TscanCode\samples\cpp\suspiciousfor.cpp)ddd";
-    //codeDir = R"delimiter(F:\work\git\viplexcore\src\libs\viplexcommon\tcp)delimiter";
-    //codeDir = R"ddd(F:\work\git\cppdetector\supporting\badcodesamples)ddd";
-    auto exceptionConfig = "F:\\work\\cppdetector\\supporting\\exceptionconfig.json";
+    codeDir = R"delimiter(F:\work\git\cppdetector\supporting\badcodesamples)delimiter";
+    auto exceptionConfig = R"delimiter(F:\work\git\cppdetector\supporting\exceptionconfig.json)delimiter";
 #elif __APPLE__
     string codeDir = "/Users/hualongzhang/work/cppdetector/detector_core/";
     codeDir = "/Users/hualongzhang/work/cppdetector/supporting/badcodesamples";
@@ -174,7 +171,7 @@ int main(int argc, char* argv[]) {
 #else
     //#   error "Unknown compiler"
 #endif
-
+    
     if (context->setExceptionConfigPath(exceptionConfig).empty())
     {
         return -1;
