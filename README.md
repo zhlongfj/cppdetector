@@ -160,5 +160,5 @@ email: zhlongfj@sina.com
 [License MIT](LICENSE)
 
 [badags](https://shields.io/category/social)
-谷歌编程规范
-https://google.github.io/styleguide/cppguide.html#Static_and_Global_Variables
+[Google C++ Style Guide]
+(https://google.github.io/styleguide/cppguide.html)
