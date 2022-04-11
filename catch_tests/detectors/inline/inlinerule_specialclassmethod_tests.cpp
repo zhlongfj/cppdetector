@@ -1,5 +1,4 @@
 ﻿#include "../../catch.hpp"
-#include<regex>
 #include "detectors/inline/inlinerule_specialclassmethod.h"
 
 static constexpr auto code1 = R"delimiter(
@@ -16,7 +15,7 @@ SCENARIO("InlineRuleTenLines", "") {
         WHEN("Match condition") {
             THEN("Matching rule") {
                 InlineRuleSpecialClassMethod rule;
-                CHECK(!rule.detect(code1, "ss.h"));
+                CHECK(rule.detect(code1, "ss.h"));
             }
         }
         WHEN("Mismatch condition") {

@@ -1,5 +1,4 @@
 #include "../../catch.hpp"
-#include<regex>
 #include "detectors/pointer/pointerrule_notcheck.h"
 
 static constexpr auto checkFirst = R"delimiter(

@@ -1,28 +1,25 @@
 #include "../../catch.hpp"
-#include "detectors/confused/confusedrule_returnbool.h"
+#include "detectors/logic/logicrule_assignself.h"
 
 static constexpr auto code1 = R"delimiter(
-bool ConfusedRuleReturnBoolRetFunc()
+void LogicRuleAssignSelfDemo()
 {
-    if (rand() > 10)
-    {
-        return 10;
-    }
-    return 1;
+    int i;
+    i = i;
 }
 )delimiter";
 
-SCENARIO("ConfusedRuleReturnBool", "") {
+SCENARIO("LogicRuleAssignSelf", "") {
     GIVEN("") {
         WHEN("Match condition") {
             THEN("Matching rule") {
-                ConfusedRuleReturnBool rule;
+                LogicRuleAssignSelf rule;
                 CHECK(rule.detect(code1, "dd.h"));
             }
         }
         WHEN("just called") {
             THEN("called") {
-                ConfusedRuleReturnBool rule;
+                LogicRuleAssignSelf rule;
                 rule.resetData();
             }
         }

@@ -1,8 +1,9 @@
 ﻿#pragma once
 #include "../rule.h"
 #include "../../common/reflecter.h"
+#include "detector_global.h"
 
-class IteratorRuleInvalidDereference final : public Rule {
+class DETECTOR_EXPORT IteratorRuleInvalidDereference final : public Rule {
 public:
     IteratorRuleInvalidDereference();
 

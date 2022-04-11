@@ -1,5 +1,4 @@
 ﻿#include "../../catch.hpp"
-#include<regex>
 #include "detectors/inline/inlinerule_tenlines.h"
 
 static constexpr auto sss = R"delimiter(

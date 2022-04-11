@@ -29,18 +29,12 @@ bool LoopRuleOutOfBounds::detectCore(const string& code, const ErrorFile& errorF
         return false;
     }
 
-    auto border = "(\\W+)";
-    if (auto ret = DetectorHelper::check(codeTmp, border + m_loopVariable + border); !ret.empty())
+    auto border = "([\\+\\-]*)";
+    auto regValue = border + m_loopVariable + border;
+    if (auto ret = DetectorHelper::check(codeTmp, regValue); !ret.empty())
     {
-        auto left = ret[1].str();
-        auto right = ret[2].str();
-        auto belongs = left == "." || left == "->" || left == "::";
-        auto prefix = left == "++" || left == "--";
-        auto postfix = !belongs && (right == "++" || right == "--");
-        //codeTmp = "if(pubKey[i]!=',", right will be ]!=
-        auto assignment = !belongs && (right != "==" && right != "!=" && right.find("=") == 0);
-        auto variableChanged = prefix || postfix || assignment;
-        if (variableChanged)
+        if (!ret[1].str().empty()
+            || !ret[2].str().empty())
         {
             storeRuleError(errorFile);
             return true;

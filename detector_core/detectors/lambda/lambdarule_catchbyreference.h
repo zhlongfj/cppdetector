@@ -1,8 +1,9 @@
 ﻿#pragma once
 #include "detectors/rule.h"
 #include "../../common/reflecter.h"
+#include "detector_global.h"
 
-class LambdaRuleCatchByReference final : public Rule {
+class DETECTOR_EXPORT LambdaRuleCatchByReference final : public Rule {
 public:
     LambdaRuleCatchByReference();
 

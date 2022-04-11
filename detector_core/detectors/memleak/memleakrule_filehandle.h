@@ -1,8 +1,9 @@
 ﻿#pragma once
 #include "../rule.h"
 #include "../../common/reflecter.h"
+#include "detector_global.h"
 
-class MemLeakRuleFileHandle final : public Rule {
+class DETECTOR_EXPORT MemLeakRuleFileHandle final : public Rule {
 public:
     MemLeakRuleFileHandle();
 

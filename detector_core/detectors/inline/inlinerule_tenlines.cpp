@@ -4,7 +4,7 @@
 using namespace std;
 
 InlineRuleTenLines::InlineRuleTenLines() : Rule("InlineRuleTenLines")
-    , braceHelper(make_unique<BraceHelper>())
+, braceHelper(make_unique<BraceHelper>())
 {
     m_ruleContent = make_shared<RuleContent>(ErrorPriority::Suggest, m_name,
         "Do not define a function with more than 10 lines as an inline function.",
@@ -13,7 +13,7 @@ InlineRuleTenLines::InlineRuleTenLines() : Rule("InlineRuleTenLines")
 
 InlineRuleTenLines::~InlineRuleTenLines() = default;
 
-bool InlineRuleTenLines::detectCore(const string& code, const ErrorFile& errorFile)
+bool InlineRuleTenLines::detectCore(const string & code, const ErrorFile & errorFile)
 {
     if (errorFile.path.find(".h") == string::npos)
     {
@@ -43,17 +43,15 @@ bool InlineRuleTenLines::detectCore(const string& code, const ErrorFile& errorFi
     {
         return false;
     }
-    else
+
+    if (countOfLeftBrace == 0)
     {
-        if (countOfLeftBrace == 0)
+        bool valid = m_isInline && errorFile.line - m_lineOfFunction >= 10;
+        resetData();
+        if (valid)
         {
-            bool valid = m_isInline && errorFile.line - m_lineOfFunction >= 10;
-            resetData();
-            if (valid)
-            {
-                storeRuleError({ m_lineOfFunction, errorFile.path });
-                return true;
-            }
+            storeRuleError({ m_lineOfFunction, errorFile.path });
+            return true;
         }
     }
 

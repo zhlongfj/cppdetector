@@ -1,5 +1,4 @@
 #include "../../catch.hpp"
-#include<regex>
 #include "detectors/confused/confusedrule_prioritywithassignmentandcompare.h"
 
 static constexpr auto code1 = R"delimiter(

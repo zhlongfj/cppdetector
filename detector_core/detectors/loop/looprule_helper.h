@@ -3,7 +3,7 @@
 #include "../../common/reflecter.h"
 
 using VariableInFor = pair<std::string, set<std::string>>;
-class LoopRuleHelper final {
+class DETECTOR_EXPORT LoopRuleHelper final {
 public:
     static bool findNotAutoFromFor(const std::string& code);
 

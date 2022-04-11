@@ -1,5 +1,4 @@
 #include "../../catch.hpp"
-#include<regex>
 #include "detectors/pointer/pointerrule_usednull.h"
 
 static constexpr auto content = R"delimiter(

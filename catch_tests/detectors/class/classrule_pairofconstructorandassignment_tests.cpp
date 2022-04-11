@@ -1,5 +1,4 @@
 ﻿#include "../../catch.hpp"
-#include<regex>
 #include "detectors/class/classrule_pairofconstructorandassignment.h"
 
 static constexpr auto sss = R"delimiter(

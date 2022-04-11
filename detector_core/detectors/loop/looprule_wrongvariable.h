@@ -1,8 +1,9 @@
 ﻿#pragma once
 #include "../rule.h"
 #include "../../common/reflecter.h"
+#include "detector_global.h"
 
-class LoopRuleWrongVariable final : public Rule {
+class DETECTOR_EXPORT LoopRuleWrongVariable final : public Rule {
 public:
     LoopRuleWrongVariable();
 

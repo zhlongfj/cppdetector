@@ -1,8 +1,9 @@
 ﻿#pragma once
 #include "../rule.h"
 #include "../../common/reflecter.h"
+#include "detector_global.h"
 
-class IteratorRuleOutOfBound final : public Rule {
+class DETECTOR_EXPORT IteratorRuleOutOfBound final : public Rule {
 public:
     IteratorRuleOutOfBound();
 

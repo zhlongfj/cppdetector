@@ -13,7 +13,8 @@ bool LogicRuleBaseValue::detectCore(const string &code, const ErrorFile &errorFi
         || code.find("if (0)") != string::npos
         || code.find("if (true)") != string::npos
         || code.find("if (false)") != string::npos
-            ) {
+            ) 
+    {
         storeRuleError(errorFile);
         return true;
     }

@@ -6,8 +6,9 @@
 #include "logicrule_assignself.h"
 #include "logicrule_stringfind.h"
 #include "logicrule_expressionrepetition.h"
+#include "detector_global.h"
 
-class LogicDetector final : public Detector {
+class DETECTOR_EXPORT LogicDetector final : public Detector {
 public:
     LogicDetector()
         :Detector("LogicDetector")

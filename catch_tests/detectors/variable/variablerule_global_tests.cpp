@@ -1,5 +1,4 @@
 ﻿#include "../../catch.hpp"
-#include<regex>
 #include "detectors/variable/variablerule_global.h"
 
 SCENARIO("VariableRuleGlobal", "") {

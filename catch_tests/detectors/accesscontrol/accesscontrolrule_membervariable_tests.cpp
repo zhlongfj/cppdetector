@@ -1,5 +1,4 @@
 ﻿#include "../../catch.hpp"
-#include<regex>
 #include "detectors/accesscontrol/accesscontrolrule_membervariable.h"
 
 SCENARIO("AccessControlRuleMemberVariable", "") {

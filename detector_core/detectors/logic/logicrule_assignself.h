@@ -1,8 +1,9 @@
 ﻿#pragma once
 #include "../rule.h"
 #include "../../common/reflecter.h"
+#include "detector_global.h"
 
-class LogicRuleAssignSelf final : public Rule {
+class DETECTOR_EXPORT LogicRuleAssignSelf final : public Rule {
 public:
     LogicRuleAssignSelf();
 

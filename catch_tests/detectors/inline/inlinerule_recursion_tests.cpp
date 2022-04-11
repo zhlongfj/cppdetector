@@ -1,5 +1,4 @@
 ﻿#include "../../catch.hpp"
-#include<regex>
 #include "detectors/inline/inlinerule_recursion.h"
 
 SCENARIO("InlineRuleRecursion", "") {

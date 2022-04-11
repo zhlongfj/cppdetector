@@ -1,28 +1,27 @@
 #include "../../catch.hpp"
-#include "detectors/confused/confusedrule_returnbool.h"
+#include "detectors/logic/logicrule_basevalue.h"
 
 static constexpr auto code1 = R"delimiter(
-bool ConfusedRuleReturnBoolRetFunc()
+void LogicRuleBaseValueDemo()
 {
-    if (rand() > 10)
-    {
-        return 10;
-    }
-    return 1;
+    if (1) {};
+    if (0) {};
+    if (true) {};
+    if (false) {};
 }
 )delimiter";
 
-SCENARIO("ConfusedRuleReturnBool", "") {
+SCENARIO("LogicRuleBaseValue", "") {
     GIVEN("") {
         WHEN("Match condition") {
             THEN("Matching rule") {
-                ConfusedRuleReturnBool rule;
+                LogicRuleBaseValue rule;
                 CHECK(rule.detect(code1, "dd.h"));
             }
         }
         WHEN("just called") {
             THEN("called") {
-                ConfusedRuleReturnBool rule;
+                LogicRuleBaseValue rule;
                 rule.resetData();
             }
         }

@@ -3,8 +3,14 @@
 //
 #define CATCH_CONFIG_MAIN
 #include "../../catch.hpp"
-#include<regex>
 #include "detectors/memleak/memleakrule_destructor.h"
+
+static constexpr auto codeStruct = R"delimiter(
+struct DetectorContext
+{
+    ~DetectorContext(){}
+}
+)delimiter";
 
 SCENARIO("MemLeakRuleDestructor", "") {
     GIVEN("normal class declaration") {
@@ -59,6 +65,14 @@ SCENARIO("MemLeakRuleDestructor", "") {
                 CHECK(rule.detect("~DetectorContext()", "") == false);
 
                 CHECK(rule.getRuleErrors().empty());
+            }
+        }
+    }
+    GIVEN("struct declaration") {
+        WHEN("with 'virtual' in the destructor declaration or with 'final' in the struct declaration") {
+            THEN("normal") {
+                MemLeakRuleDestructor rule;
+                CHECK(rule.detect(codeStruct, "dd"));
             }
         }
     }

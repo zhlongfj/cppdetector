@@ -1,8 +1,9 @@
 ﻿#pragma once
 #include "../rule.h"
 #include "../../common/reflecter.h"
+#include "detector_global.h"
 
-class LoopRuleSuggestauto final : public Rule {
+class DETECTOR_EXPORT LoopRuleSuggestauto final : public Rule {
 public:
     LoopRuleSuggestauto();
 

@@ -1,5 +1,4 @@
 ﻿#include "../../catch.hpp"
-#include<regex>
 #include "detectors/inline/inlinerule_complexfunction.h"
 
 SCENARIO("InlineRuleComplexFunction", "") {

@@ -16,7 +16,7 @@ bool LambdaRuleCatchByReference::detectCore(const string& code, const ErrorFile&
         return false;
     }
 
-    auto ret = DetectorHelper::check(code, "\\[.*&(.*)\\]\\(");
+    auto ret = DetectorHelper::check(code, R"delimiter(\[.*&(.*)\]\()delimiter");
     if (ret.empty())
     {
         return false;

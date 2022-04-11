@@ -1,5 +1,4 @@
 ﻿#include "../../catch.hpp"
-#include<regex>
 #include "detectors/confused/confusedrule_diffvariablewithinitandcondition.h"
 
 SCENARIO("ConfusedRuleDiffVariableWithInitAndCondition", "") {

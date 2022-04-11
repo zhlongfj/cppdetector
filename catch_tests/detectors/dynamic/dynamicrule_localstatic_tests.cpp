@@ -1,5 +1,4 @@
 #include "../../catch.hpp"
-#include<regex>
 #include "detectors/dynamic/dynamicrule_localstatic.h"
 
 static constexpr auto code1 = R"delimiter(
