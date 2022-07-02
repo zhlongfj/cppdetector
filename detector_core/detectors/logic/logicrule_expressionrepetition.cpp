@@ -1,4 +1,4 @@
-﻿#include "logicrule_expressionrepetition.h"
+#include "logicrule_expressionrepetition.h"
 #include "detectorcommon/detectorhelp.h"
 #include "../../common/stringhelper.h"
 
@@ -23,7 +23,7 @@ bool LogicRuleExpressionRepetition::detectCore(const string& code, const ErrorFi
     }
 
     //check "if (a < 3 && a < 25)" or "if (a >= 10 && a >= 20)"
-    auto operation = ret[2];
+    auto operation = ret[2].str();
     if (operation == "!="
         || operation == "==")
     {

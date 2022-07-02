@@ -30,11 +30,11 @@ bool ConfusedRuleBreak::detectCore(const string &code, const ErrorFile &errorFil
     auto indexOfSwitch = code.find("switch (");
     if (indexOfSwitch != string::npos) {
         m_indexOfSwitch = indexOfSwitch;
-        m_countOfBraceInSwitch = m_braceHelper->calculateCountOfOpenBrace(code);
+        m_countOfBraceInSwitch = m_braceHelper->calculateCountOfOpenBrace(code, errorFile.line);
     }
 
     if (m_indexOfSwitch != string::npos) {
-        m_countOfBraceInSwitch = m_braceHelper->calculateCountOfOpenBrace(code);
+        m_countOfBraceInSwitch = m_braceHelper->calculateCountOfOpenBrace(code, errorFile.line);
         if (m_countOfBraceInSwitch == 0
             && m_braceHelper->findOpenBrace()) {
             m_indexOfSwitch = string::npos;

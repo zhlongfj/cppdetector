@@ -38,7 +38,7 @@ bool InlineRuleTenLines::detectCore(const string & code, const ErrorFile & error
         return false;
     }
 
-    int countOfLeftBrace = braceHelper->calculateCountOfOpenBrace(code);
+    int countOfLeftBrace = braceHelper->calculateCountOfOpenBrace(code, errorFile.line);
     if (!braceHelper->findOpenBrace())
     {
         return false;

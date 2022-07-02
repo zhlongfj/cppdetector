@@ -7,12 +7,12 @@ using namespace std;
 class DETECTOR_EXPORT BraceHelper final
 {
 public:
-    int calculateCountOfOpenBrace(const string& code);
+    int calculateCountOfOpenBrace(const string& code, const int line);
     bool findOpenBrace() { return m_findOpenBrace; }
     void resetData();
 
 private:
-    void reduceCountOfOpenBrace();
+    void reduceCountOfOpenBrace(const int line);
     bool openBraceAtBegin(const string& codeWithoutSpace);
     bool openBraceAfterCloseParenthesis(const string& codeWithoutSpace);
     bool closeBrace(const string& codeWithoutSpace);

@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-int BraceHelper::calculateCountOfOpenBrace(const string& code)
+int BraceHelper::calculateCountOfOpenBrace(const string& code, const int line)
 {
     auto codeWithoutSpace = StringHelper(code).removeSpaceAndTab();
 
@@ -22,7 +22,7 @@ int BraceHelper::calculateCountOfOpenBrace(const string& code)
 
     if (closeBrace(codeWithoutSpace))
     {
-        reduceCountOfOpenBrace();
+        reduceCountOfOpenBrace(line);
     }
 
     return m_countOfOpenBrace;
@@ -58,14 +58,14 @@ bool BraceHelper::openBraceAtBegin(const string& codeWithoutSpace)
     return index == 0;
 }
 
-void BraceHelper::reduceCountOfOpenBrace()
+void BraceHelper::reduceCountOfOpenBrace(const int line)
 {
     --m_countOfOpenBrace;
     if (m_countOfOpenBrace < 0)
     {
-        auto msg = "error: m_countOfLeftBrace is " + to_string(m_countOfOpenBrace);
+        auto msg = "warning: m_countOfLeftBrace is " + to_string(m_countOfOpenBrace) + " in line: " + to_string(line);
         std::cout << msg << std::endl;
-        throw msg;
+        m_countOfOpenBrace = 0;
     }
 }
 

@@ -1,4 +1,4 @@
-﻿#include "pointerrule_helper.h"
+#include "pointerrule_helper.h"
 #include "detectorcommon/detectorhelp.h"
 #include "common/stringhelper.h"
 
@@ -57,7 +57,7 @@ std::string PointerRuleHelper::getDereferenceVariable(const string& content)
     {
         if (auto ret = DetectorHelper::check(content, "\\s*\\*\\s*(\\w+)"); !ret.empty())
         {
-            auto prefix = ret.prefix();
+            auto prefix = ret.prefix().str();
             if (DetectorHelper::check(prefix, "\\w+$").empty())
             {
                 return ret[1];
